@@ -166,7 +166,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const obj = intersects[0].object.el;
         if (!obj) return;
 
-        if (obj.hasAttribute("open-insta")) window.location.href = "https://instagram.com";
+        if (obj.hasAttribute("open-insta")) window.location.href = "https://www.instagram.com/looplay.produtora?igsh=d25nc2J4czhsMDZz";
         if (obj.hasAttribute("open-face")) window.location.href = " https://forms.gle/vsEtZxiAF53CEA8a9";
         if (obj.hasAttribute("open-whats")) window.location.href = "https://wa.me/000000000";
 
@@ -265,13 +265,13 @@ window.addEventListener("DOMContentLoaded", () => {
       <a-entity mindar-image-target="targetIndex: 0">
 
         <a-plane src="#card" position="0 0 0" height="1.5" width="1" material="roughness: 1; metalness: 0;"></a-plane>
-
+      <a-entity id="avatarContainer" position="0 0.05 0.2" rotation="0 0 0" scale="1 1 1">
         <a-gltf-model
             id="avatar" src="#avatarModel" position="0 0 0" rotation="0 0 0" scale="0.15 0.15 0.15" 
             animation=" property: rotation; from: 0 0 0; to: 0 360 0; dur: 10000; easing: linear; loop: true;">
         </a-gltf-model>
 
-
+      </a-entity>
         <!-- VIDEO 1:1 -->
         <a-video
           id="videoPlane"
