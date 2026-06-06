@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <title></title>   
+    <title>Aticação Looplay</title>   
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
 
@@ -175,6 +175,7 @@ window.addEventListener("DOMContentLoaded", () => {
           videoPlaying = true;
 
           const audio = document.getElementById("audioVoz");
+          audio.volume = 1.0; // volume máximo
           audio.currentTime = 0;
           audio.play();
 
@@ -236,14 +237,14 @@ window.addEventListener("DOMContentLoaded", () => {
       device-orientation-permission-ui="enabled: false">
 
       <a-assets>
-        <img id="card" src="Imagens/Cartao.jpg">
-        <img id="instaIcon" src="Imagens/btn_Instagram.png">
-        <img id="faceIcon" src="Imagens/btn_Facebook.png">
+        <img id="card" src="Imagens/fundo_interacao2.png">
+        <img id="instaIcon" src="Imagens/btn_Visitante.png">
+        <img id="faceIcon" src="Imagens/btn_Empresa.png">
         <img id="whatsIcon" src="Imagens/btn_Whatsapp.png">
         <img id="audioIcon" src="Imagens/btn_Audio.png">
 
         <audio id="audioVoz" src="Audios/"></audio>
-        <audio id="audioAmbiente" src="Audios/baroque-194637.mp3"></audio>
+        <audio id="audioAmbiente" src="Audios/Musica.mp3"></audio>
 
         <!-- VIDEO 1:1 -->
         <video
@@ -255,7 +256,7 @@ window.addEventListener("DOMContentLoaded", () => {
           crossorigin="anonymous">
         </video>
 
-        <a-asset-item id="avatarModel" src="Modelos/Casa.glb"></a-asset-item>
+        <a-asset-item id="avatarModel" src="Modelos/logo.glb"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false">
@@ -264,15 +265,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
       <a-entity mindar-image-target="targetIndex: 0">
 
-        <a-plane src="#card" position="0 0 0" height="0.552" width="1"></a-plane>
+        <a-plane src="#card" position="0 0 0" height="1.5" width="1"></a-plane>
 
-        <a-gltf-model
-          id="avatar"
-          src="#avatarModel"
-          rotation="90 0 0"
-          position="0.03401 0.69708 0.05371"
-          scale="0.15505 0.15505 0.15505">
-        </a-gltf-model>
+       <a-gltf-model
+    id="avatar"
+    src="#avatarModel"
+    rotation="0 0 0"
+    position="0 0.05 0.1"
+    scale="3 3 3"
+    animation="
+      property: rotation;
+      from: 0 0 0;
+      to: 0 360 0;
+      dur: 10000;
+      easing: linear;
+      loop: true;">
+</a-gltf-model>
 
         <!-- VIDEO 1:1 -->
         <a-video
@@ -285,12 +293,12 @@ window.addEventListener("DOMContentLoaded", () => {
           material="opacity: 0">
         </a-video>
 
-        <a-image src="#instaIcon" position="-0.37193 -0.43656 0.03978"
-                 width="0.22" height="0.22"
+        <a-image src="#instaIcon" position="-0.02081 -0.44414 0.04643"
+                 width="0.5" height="0.15"
                  open-insta class="clickable"></a-image>
 
-        <a-image src="#faceIcon" position="-0.02081 -0.45525 0.04643"
-                 width="0.22" height="0.22"
+        <a-image src="#faceIcon" position="-0.02081 -0.6414 0.04643"
+                 width="0.5" height="0.15"
                  open-face class="clickable"></a-image>
 
         <a-image src="#whatsIcon" position="0.35 -0.45 0.05"
